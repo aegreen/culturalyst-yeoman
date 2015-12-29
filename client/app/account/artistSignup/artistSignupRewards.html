@@ -1,0 +1,113 @@
+<navbar></navbar>
+
+<!--<a ui-sref="main">-->
+  <!--<button>-->
+    <!--put shit here-->
+  <!--</button>-->
+<!--</a>-->
+
+<!--<button ng-click="next" ng-submit="vm.register(RewardsForm)">-->
+  <!--next-->
+<!--</button>-->
+
+<div class="container rwds">
+  <h2 class="rewards-header"> What rewards would you like to offer? </h2>
+
+  <div class="rewards container-fluid">
+    <div class="col-md-4 card" ng-repeat="reward in rewards">
+      <div class="reward-price">
+        <h3>{{reward.amount | currency}}</h3>
+      </div>
+      <div class="reward-header">
+        <h3>{{reward.title}}</h3>
+      </div>
+      <div class="reward-description">
+        <h4>{{reward.description}}</h4>
+      </div>
+      <div>
+        <button class="btn btn-default btn-md" type="button"
+                name="button">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="reward-price">
+        <input ng-model="newReward.amount" min="1.00" step="0.01" type="number"
+               class="form-control" value="1.00" placeholder="Value">
+      </div>
+      <div class="reward-header input-group-sm">
+        <input ng-model="newReward.title" type="text" class="form-control" placeholder="Title">
+      </div>
+      <!-- Need to add a TYPE field -->
+      <div class="reward-description input-group-lg">
+        <input ng-model="newReward.description" type="text" class="form-control" placeholder="Description">
+      </div>
+      <button class="btn btn-default btn-md" type="button"
+              name="button" ng-click="vm.saveReward()">
+        Save
+      </button>
+    </div>
+
+<!--       <div class="col-md-3">
+        <div class="reward-price">
+          <h3>$2</h3>
+        </div>
+        <div class="reward-header input-group-sm">
+          <input ng-model="drt01" type="text" class="form-control"
+                 placeholder="Title">
+        </div>
+        <div class="reward-description input-group-lg">
+          <input ng-model="drd01" type="text" class="form-control"
+                 placeholder="Description">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="reward-price">
+          <h3>$10</h3>
+        </div>
+        <div class="reward-header input-group-sm">
+          <input ng-model="drt02" type="text" class="form-control"
+                 placeholder="Title">
+        </div>
+        <div class="reward-description input-group-lg">
+          <input ng-model="drd02" type="text" class="form-control"
+                 placeholder="Description">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="reward-price">
+          <h3>$15</h3>
+        </div>
+        <div class="reward-header input-group-sm">
+          <input ng-model="drt04" type="text" class="form-control"
+                 placeholder="Title">
+        </div>
+        <div class="reward-description input-group-lg">
+          <input ng-model="drd04" type="text" class="form-control"
+                 placeholder="Description">
+        </div>
+      </div> -->
+
+  </div>
+
+<!--   <div>
+    <h2 class="custom-rewards-header">
+      Would you like to offer other custom rewards?
+    </h2>
+
+    <p> You can complete this section at a later time, no hurry! </p>
+  </div> -->
+
+<!--   <p>
+    <a href="#" class="btn btn-primary" role="button" id="add-new-rewards"
+       ng-click="vm.addField()">
+      add one more
+    </a>
+  </p> -->
+
+</div>
+<footer></footer>

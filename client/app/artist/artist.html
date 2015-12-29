@@ -1,1 +1,134 @@
-<div>This is the artist view.</div>
+<navbar></navbar>
+
+<div class="jumbotron text-center artistBack" ng-init="getArtistContent()">
+  <div class="container">
+    <img class="profileImg" src="{{artist.picUrl}}"/>
+    <h2>{{artist.name}}</h2>
+    <p>
+      {{artist.short}}
+    </p>
+    <a href="/payment/{{artist._id}}" class="btn btn-default btn-lg">Catalyze Me</a>
+  </div>
+</div>
+
+<div class="artistModal">
+<div class="middle col-md-offset-2 col-md-8">
+ <nav class="navbar navbar-default">
+   <div class="container">
+     <ul class="nav navbar-nav">
+       <li><a ui-sref=".bio">Bio</a></li>
+       <li><a ui-sref=".posts">Posts</a></li>
+       <li><a ui-sref=".catalysts">Catalysts</a></li>
+     </ul>
+   </div>
+ </nav>
+ <div class="profile">
+     <div ui-view></div>
+ </div>
+</div>
+</div>
+
+
+<div class="feedNearned">
+  <div class="container">
+    <div class="row">
+      <div class="modal-dialog col-md-3">
+        <div class="modal-content">
+            <div class="modal-header">
+      			Newsworthy Stuffs
+            </div>
+            <div class="modal-body">
+                <form class="form center-block">
+                  <div class="form-group">
+                    <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?" ng-model="post"></textarea>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div>
+                <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" ng-click="saveContent(post)">Post</button>
+                  <ul class="pull-left list-inline">
+                  <li><a ngf-select="uploadFiles($files)"><i class="glyphicon glyphicon-upload"></i></a>
+<!--                     <div class="upload_button_holder">
+                        <div href="#" class="upload_button"  multiple title="upload" resetOnClick="true" >Upload</div>
+                    </div> -->
+                  </li>
+                  <li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
+                  </ul>
+      		  </div>
+            </div>
+        </div>
+        </div>
+
+      <div class="earned col-md-offset-2 col-md-3 text-center">
+          <div class="numCats">
+            <h2 class="supporters">{{artist.supporters}} catalysts</h2>
+          </div>
+          <h4>contributing</h4>
+          <div class="">
+            <h2 class="earneded">{{artist.earned | currency}}</h2>
+          </div>
+          <h4>per month</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal-dialog" ng-repeat="post in posts | limitTo: 10 | orderBy: created">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-1 postImg">
+          <img src="http://placehold.it/50x50"/>
+        </div>
+        <div class="col-md-3">
+          <span>{{artist.name}}</span>
+          <span>{{post.created}}</span>
+        </div>
+      </div>
+      <div class="">
+        <p>
+          {{post.info}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="card card-block text-xs-center" ng-repeat="reward in rewards">
+      <h4 class="card-title">{{reward.title}}</h4>
+      <p class="card-text">{{reward.info}}</p>
+      <a href="#" class="btn btn-primary">Choose this reward</a>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="middle col-md-offset-2 col-md-8">
+=======
+<div class="middle col-md-offset-2 col-md-8">
+>>>>>>> feat/artistCard: Working artist cards
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref=".bio">Bio</a></li>
+        <li><a ui-sref=".posts">Posts</a></li>
+        <li><a ui-sref=".catalysts">Catalysts</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="profile">
+      <div ui-view></div>
+  </div>
+</div> -->

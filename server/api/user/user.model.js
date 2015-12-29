@@ -36,12 +36,30 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true
       }
     },
+    location: DataTypes.STRING,
+    birthday: DataTypes.DATE,
+    picUrl: DataTypes.STRING,
+    img: DataTypes.STRING,
+    //Medium and Submedium will be removed on join table connections
+    medium: DataTypes.STRING,
+    submedium: DataTypes.STRING,
+    earned: DataTypes.STRING,
+    budget: DataTypes.DECIMAL,
+    supporters: {
+      type: DataTypes.STRING,
+      default: 0
+    },
+    bio: DataTypes.TEXT,
     provider: DataTypes.STRING,
     salt: DataTypes.STRING,
     facebook: DataTypes.TEXT,
     twitter: DataTypes.TEXT,
     google: DataTypes.TEXT,
-    github: DataTypes.TEXT
+    github: DataTypes.TEXT,
+    account: {
+      type: DataTypes.STRING,
+      unique: true
+    }
 
   }, {
 
@@ -53,7 +71,16 @@ module.exports = function(sequelize, DataTypes) {
       profile: function() {
         return {
           'name': this.name,
-          'role': this.role
+          'role': this.role,
+          'location': this.location,
+          'short': this.bio,
+          'medium': this.medium,
+          'submedium': this.submedium,
+          'picUrl': this.picUrl,
+          'img': this.img,
+          'earned': this.earned,
+          'budget': this.budget,
+          'supporters': this.supporters
         };
       },
 

@@ -12,6 +12,25 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
+      'client/bower_components/jquery/dist/jquery.js',
+      'client/bower_components/angular/angular.js',
+      'client/bower_components/angular-resource/angular-resource.js',
+      'client/bower_components/angular-cookies/angular-cookies.js',
+      'client/bower_components/angular-sanitize/angular-sanitize.js',
+      'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'client/bower_components/lodash/lodash.js',
+      'client/bower_components/angular-socket-io/socket.js',
+      'client/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'client/bower_components/angular-validation-match/dist/angular-validation-match.min.js',
+      'client/bower_components/moment/moment.js',
+      'client/bower_components/firebase/firebase.js',
+      'client/bower_components/angularfire/dist/angularfire.js',
+      'client/bower_components/ng-file-upload/ng-file-upload.js',
+      'client/bower_components/ng-file-upload-shim/ng-file-upload-shim.js',
+      'client/bower_components/cloudinary_js/js/jquery.cloudinary.js',
+      'client/bower_components/cloudinary_ng/js/angular.cloudinary.js',
+      'client/bower_components/angular-stripe/release/angular-stripe.js',
+      'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',
       'client/app/app.js',

@@ -1,0 +1,56 @@
+.profile {
+  padding: 0;
+  background-color: #eee;
+  height: 300px;
+}
+
+.postBod {
+  background-color: #5bc0de;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.artistBack {
+  background-image: {{artist.img}};
+  color: white;
+}
+
+.profileImg {
+  height: 200px;
+  border-radius:50%;
+  border:1px solid white;
+}
+
+.postImg {
+  margin-right: 10px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.feedNearned {
+  margin-top: 30px;
+  margin-left: -40px;
+}
+
+.earned {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  width: 30%;
+}
+
+.modal-dialog {
+  margin-top: 0px;
+}
+
+.modal-content {
+  box-shadow: none;
+}
+.artistModal{
+  margin: 20px 0px;
+}
+.post{
+  height:300px;
+}
+

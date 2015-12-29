@@ -1,1 +1,27 @@
-<div>This is the dashArtist view.</div>
+<navbar></navbar>
+
+<div class="container-fluid" ng-controller="DashArtistCtrl">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a ui-sref=".myList">My Lyst<span class="sr-only">(current)</span></a></li>
+        <li><a ui-sref=".payments">Payments</a></li>
+        <li><a ui-sref=".rewards">Rewards</a></li>
+        <li><a ui-sref=".messages">Messages</a></li>
+        <li><a ui-sref=".content">Content</a></li>
+        <li><a ui-sref=".profile">Artist Profile</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a ui-sref=".userDash">User Dashboard</a></li>
+        <li><a href="../account/settings/settings">Change Password</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <br>
+      <h1 class="page-header">Hey You!</h1>
+      <div ui-view>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

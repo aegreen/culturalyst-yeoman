@@ -1,1 +1,56 @@
-<div>This is the discovery view.</div>
+<navbar></navbar>
+<div id="menu-toggle"></div>
+<div id="menu-toggle-2"></div>
+<sidebar></sidebar>
+<!-- <sidebar></sidebar> -->
+<div ng-controller="DiscoveryCtrl">
+	<div id="wrapper">
+		<div id="page-content-wrapper">
+			<div class="container-fluid xyz">
+				<div class="row">
+					<div class="col-lg-12">
+						<section class="jumbotron text-xs-center">
+							<div class="container">
+								<h1 class="jumbotron-heading">Featured Artists in New Orleans</h1>
+								<p class="lead text-muted" align="center">BEGIN TO DISCOVER THE CULTURE AROUND YOU. </p>
+								<select ng-model="medium" ng-options="medium as medium.name for medium in mediaList" ng-change="loadSubMediums(medium); getArtists()" ng-selected="medium"></select>
+								<select ng-model="selectedSubmedium" ng-options="submedium for submedium in submedia" ng-change="getArtists()" ng-change="getFaces()"></select>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="container" align="center">
+				<div class="row">
+					<div id="custom-search-input">
+						<div class="input-group col-md-12">
+							<input type="text" class="search-query form-control" placeholder="Search" ng-model="searchText" />
+						</div>
+					</div>
+				</div>
+			</div>
+  		<div class ="container">
+
+        <div class="row">
+            <!-- for $scope to work we would need a controller -->
+            <div class="album text-muted">
+              <a ng-repeat="artist in artists | filter:searchText | filter:{$:medium.name}" href="artist/{{artist._id}}">
+              <div class="card" >
+                <div>
+                    <img class="profilePic" ng-src="{{artist.picUrl}}"/>
+                    <div class="profileName">
+                      <h2 >{{artist.name}}</h2>
+                      <p>{{artist.medium}} > {{artist.submedium}}</p>
+                    </div>
+                </div>
+                <img class="card-img-bottom" ng-src="{{artist.img}}"/>
+              </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /#wrapper -->
+    <footer></footer>
